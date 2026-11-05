@@ -6,6 +6,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized(); // wajib sebelum await di main
   final prefs = await PrefService.init();
   await prefs.increaseOpenCount();
+  debugPrint('Isi prefs: ${prefs.debugKeys}');
   runApp(MyApp(prefs: prefs));
 }
 
